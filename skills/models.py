@@ -1,7 +1,9 @@
 from django.db import models
 
 
-class Skill(models.Models):
-    name = models.CharField(max_length=22)
-    desc = models.TextField(max_length=200, null=True)
-    ability_scores = models.ForeignKey("abilities_scores", related_name="skills")
+class Skill(models.Model):
+    name = models.CharField(max_length=22, unique=True)
+    description = models.TextField(max_length=200, null=True)
+    ability_scores = models.ForeignKey(
+        "ability_scores.AbilityScores", on_delete=models.PROTECT, related_name="skills"
+    )

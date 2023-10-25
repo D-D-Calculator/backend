@@ -8,4 +8,6 @@ class Campaigns(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     master = models.OneToOneField("users.User", on_delete=models.CASCADE)
-    characters = models.ForeignKey("characters.Character", related_name="campaigns")
+    characters = models.ForeignKey(
+        "characters.Character", on_delete=models.PROTECT, related_name="campaigns"
+    )
