@@ -6,5 +6,5 @@ class SpellDc(models.Model):
     description = models.TextField(max_length=200, null=True)
 
     dc_type = models.OneToOneField(
-        "ability_scores.AbilityScores", on_delete=models.PROTECT, related_name="spells"
+        "ability_scores.AbilityScore", on_delete=models.PROTECT, related_name="spellsDc"
     )

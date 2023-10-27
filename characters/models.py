@@ -6,8 +6,11 @@ class Character(models.Model):
     name = models.CharField(max_length=50)
     alignment = models.CharField(max_length=20, null=True, default="Not Informed")
 
-    ability_scores = models.ForeignKey(
-        "characters.Character", on_delete=models.PROTECT, related_name="characters"
+    ability_score_character = models.ForeignKey(
+        "ability_scores_characters.AbilityScoreCharacter",
+        on_delete=models.CASCADE,
+        related_name="characters",
+        default=[],
     )
     equipments = models.OneToOneField(
         "equipments.Equipment", on_delete=models.CASCADE, related_name="characters"

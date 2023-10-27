@@ -43,6 +43,7 @@ THIRD_PARTY_APPS = ["rest_framework"]
 
 MY_APPS = [
     "ability_scores",
+    "ability_scores_characters",
     "campaigns",
     "characters",
     "classes",
