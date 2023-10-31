@@ -8,17 +8,13 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('ability_scores_characters', '0001_initial'),
-        ('characters', '0002_initial'),
+        ('characters', '0003_remove_character_ability_scores_and_more'),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='character',
-            name='ability_scores',
-        ),
-        migrations.AddField(
+        migrations.AlterField(
             model_name='character',
             name='ability_scores_character',
-            field=models.ForeignKey(default=False, on_delete=django.db.models.deletion.CASCADE, related_name='characters', to='ability_scores_characters.abilityscorecharacter'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='characters', to='ability_scores_characters.abilityscorecharacter'),
         ),
     ]

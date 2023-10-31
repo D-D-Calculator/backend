@@ -9,5 +9,8 @@ class User(AbstractUser):
     password = models.CharField(max_length=50)
 
     characters = models.ForeignKey(
-        "characters.Character", on_delete=models.CASCADE, related_name="users"
+        "characters.Character",
+        on_delete=models.CASCADE,
+        related_name="users",
+        null=True,
     )
